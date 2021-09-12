@@ -40,6 +40,7 @@ class MainActivity : ComponentActivity() {
 //        val car = get<Car>()
 //        car.getCar()
         Text(text = "Hello $name!")
-        component.car.getCar()
+//        component.car.getCar()
+        component.demoOneImpl.getDemo()
     }
 }
