@@ -49,12 +49,6 @@ android {
 }
 
 dependencies {
-    // Koin AndroidX Scope features
-    implementation "io.insert-koin:koin-androidx-scope:$koin_version"
-// Koin AndroidX ViewModel features
-    implementation "io.insert-koin:koin-androidx-viewmodel:$koin_version"
-// Koin AndroidX Fragment features
-    implementation "io.insert-koin:koin-androidx-fragment:$koin_version"
 // Koin AndroidX Jetpack Compose
     implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
