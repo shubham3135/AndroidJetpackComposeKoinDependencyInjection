@@ -8,7 +8,13 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.shubhamkumarwinner.composekoindi.container.Component
+import com.shubhamkumarwinner.composekoindi.demo.Car
 import com.shubhamkumarwinner.composekoindi.ui.theme.ComposeKoinDITheme
+import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
+import org.koin.java.KoinJavaComponent.get
+import org.koin.java.KoinJavaComponent.inject
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,17 +28,18 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ComposeKoinDITheme {
-        Greeting("Android")
+    @Composable
+    fun Greeting(
+        name: String,
+        // recommended by koin
+        component: Component = Component()
+        //for constructor injection
+//        car: Car = get(),
+    ) {
+        // for field injection
+//        val car = get<Car>()
+//        car.getCar()
+        Text(text = "Hello $name!")
+        component.car.getCar()
     }
 }
